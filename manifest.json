@@ -1,6 +1,6 @@
 {
   "name": "betterExperience",
-  "version": "0.0.1",
+  "version": "0.0.1.0",
   "manifest_version": 2,
   "description": "Tweaks that may or may not break myExperience",
   "icons": {
