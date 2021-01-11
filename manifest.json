@@ -2,14 +2,11 @@
   "name": "betterExperience",
   "version": "0.10",
   "manifest_version": 2,
-  "description": "Tweaks that may or may not break myExperience",
+  "description": "Improving myExperience",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "permissions": [
-    "https://myexperience.sfu.ca/myAccount/*"
   ],
   "content_scripts": [
     {
