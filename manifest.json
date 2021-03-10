@@ -16,6 +16,9 @@
       ],
       "js": [
         "src/js/content_coop.js"
+      ],
+      "css" : [
+        "src/css/table.css"
       ]
     }
   ]

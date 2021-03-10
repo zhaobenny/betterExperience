@@ -1,0 +1,44 @@
+/* tags */
+td:nth-child(3){
+    max-width: 200px;
+}
+
+/* job title */
+td:nth-child(5){
+    max-width: 500px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* orginization */
+td:nth-child(6){
+    max-width: 200px;
+    white-space: normal;
+}
+
+/* psition type */
+#postingsTable > thead > tr > th:nth-child(7){
+    padding-right: 1px !important;
+}
+
+/* openings */
+#postingsTable > thead > tr > th:nth-child(8){
+    padding-right: 1px !important;
+}
+
+/* location */
+td:nth-child(9){
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+td:nth-child(10){
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
