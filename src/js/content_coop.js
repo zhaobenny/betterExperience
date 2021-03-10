@@ -1,32 +1,32 @@
 // Hardcoded values yay
-const id = 5;
-const division = 7;
-const internal = 9;
+const ID = 5;
+const DIVISION = 7;
+const INTERNAL = 9;
 
 function removeHeaders(){
 	let headerRow = document.querySelector("#postingsTable > thead > tr");
-	headerRow.querySelector(`th:nth-child(${id})`).remove()
-	headerRow.querySelector(`th:nth-child(${division})`).remove()
-	headerRow.querySelector(`th:nth-child(${internal})`).remove()
+	headerRow.querySelector(`th:nth-child(${ID})`).remove()
+	headerRow.querySelector(`th:nth-child(${DIVISION})`).remove()
+	headerRow.querySelector(`th:nth-child(${INTERNAL})`).remove()
 }
 
 function modifyRows(){
 	let rows = document.querySelectorAll("#postingsTable > tbody > tr"), i;
 	for (i = 0; i < rows.length; i++) {
-		rows[i].querySelector(`td:nth-child(${id})`).remove();
+		rows[i].querySelector(`td:nth-child(${ID})`).remove();
 		combineDivision(rows[i]);
-		rows[i].querySelector(`td:nth-child(${internal})`).remove();
+		rows[i].querySelector(`td:nth-child(${INTERNAL})`).remove();
 	}
 }
 
 function combineDivision(row){
 	// eliminate division column
-	let division_str = row.querySelector(`td:nth-child(${division}) > span`).innerHTML;
-	let organization_str = row.querySelector(`td:nth-child(${division - 1}) > span`).innerHTML;
+	let division_str = row.querySelector(`td:nth-child(${DIVISION}) > span`).innerHTML;
+	let organization_str = row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML;
 	if (!(organization_str.includes(division_str))){
-		row.querySelector(`td:nth-child(${division - 1}) > span`).innerHTML = organization_str + " - " + division_str;
+		row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML = organization_str + " - " + division_str;
 	}
-	row.querySelector(`td:nth-child(${division})`).remove();
+	row.querySelector(`td:nth-child(${DIVISION})`).remove();
 }
 
 function main(){
