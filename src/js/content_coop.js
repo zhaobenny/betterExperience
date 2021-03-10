@@ -10,17 +10,15 @@ function removeHeaders(){
 	headerRow.querySelector(`th:nth-child(${internal})`).remove()
 }
 
-
 function modifyRows(){
 	let rows = document.querySelectorAll("#postingsTable > tbody > tr"), i;
 	for (i = 0; i < rows.length; i++) {
-		rows[i].querySelector(`td:nth-child(${id + 1})`).style.cssText = "max-width: 500px; white-space: normal;"; //job title
 		rows[i].querySelector(`td:nth-child(${id})`).remove();
 		combineDivision(rows[i]);
-		rows[i].querySelector(`td:nth-child(10)`).style.cssText = "max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"; // location
 		rows[i].querySelector(`td:nth-child(${internal})`).remove();
 	}
 }
+
 function combineDivision(row){
 	// eliminate division column
 	let division_str = row.querySelector(`td:nth-child(${division}) > span`).innerHTML;
