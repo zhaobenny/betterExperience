@@ -23,7 +23,7 @@ function combineDivision(row){
 	// eliminate division column
 	let division_str = row.querySelector(`td:nth-child(${DIVISION}) > span`).innerHTML;
 	let organization_str = row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML;
-	if (!(organization_str.includes(division_str))){
+	if (!((organization_str.toLowerCase().replace(/\s+/g, '')).includes(division_str.toLowerCase().replace(/\s+/g, '')))){
 		row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML = organization_str + " - " + division_str;
 	}
 	row.querySelector(`td:nth-child(${DIVISION})`).remove();
