@@ -3,6 +3,7 @@
   "version": "0.12",
   "manifest_version": 2,
   "description": "Improving myExperience",
+  "options_page": "src/html/options.html",
   "icons": {
     "128": "icons/icon128.png"
   },

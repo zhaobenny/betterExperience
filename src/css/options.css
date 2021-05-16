@@ -1,0 +1,15 @@
+body {
+    background-color: darkblue;
+}
+
+p, h1 {
+    color: whitesmoke;
+}
+
+.main {
+    margin: auto;
+    width: 50%;
+    background-color: rgb(32, 32, 32);
+    border: 3px solid rgb(191, 1, 248);
+    padding: 10px;
+}
