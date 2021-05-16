@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Improving myExperience",
   "icons": {
-    "128": "icons/icon128.png"
+    "128": "icon128.png"
   },
   "permissions": [
   ],
@@ -15,10 +15,10 @@
         "https://myexperience.sfu.ca/myAccount/co-op/postings.htm"
       ],
       "js": [
-        "src/js/content_coop.js"
+        "coop_listings.js"
       ],
       "css" : [
-        "src/css/table.css"
+        "table.css"
       ]
     }
   ]

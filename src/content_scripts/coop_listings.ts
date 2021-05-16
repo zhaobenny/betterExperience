@@ -1,17 +1,17 @@
 // Hardcoded values yay
-const ID = 5;
-const DIVISION = 7;
-const INTERNAL = 9;
+const ID : number = 5;
+const DIVISION : number = 7;
+const INTERNAL : number = 9;
 
 function removeHeaders(){
-	let headerRow = document.querySelector("#postingsTable > thead > tr");
+	let headerRow : HTMLTableRowElement = document.querySelector("#postingsTable > thead > tr");
 	headerRow.querySelector(`th:nth-child(${ID})`).remove()
 	headerRow.querySelector(`th:nth-child(${DIVISION})`).remove()
 	headerRow.querySelector(`th:nth-child(${INTERNAL})`).remove()
 }
 
 function modifyRows(){
-	let rows = document.querySelectorAll("#postingsTable > tbody > tr"), i;
+	let rows = document.querySelectorAll("#postingsTable > tbody > tr"), i: number;
 	for (i = 0; i < rows.length; i++) {
 		rows[i].querySelector(`td:nth-child(${ID})`).remove();
 		combineDivision(rows[i]);
@@ -19,7 +19,7 @@ function modifyRows(){
 	}
 }
 
-function combineDivision(row){
+function combineDivision(row : Element){
 	// eliminate division column
 	let division_str = row.querySelector(`td:nth-child(${DIVISION}) > span`).innerHTML;
 	let organization_str = row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML;
@@ -46,10 +46,10 @@ function main(){
 	}
 
 	// Update the list when new sorting order is used
-	const target = document.querySelector("#postingsTablePlaceholder");
+	const target : HTMLElement = document.querySelector("#postingsTablePlaceholder");
 	const config = { childList: true, subtree: true};
 
-	var observer = new MutationObserver(function(mutations) {
+	var observer = new MutationObserver(function() {
 		observer.disconnect();
 		removeHeaders();
 		modifyRows();
