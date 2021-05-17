@@ -4,5 +4,5 @@
         "removeComments": true,
         "strict": false
     },
-    "include": ["src/content_scripts"]
+    "include": ["src/**/*"]
 }
