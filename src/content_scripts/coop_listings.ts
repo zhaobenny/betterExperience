@@ -1,10 +1,12 @@
-// Hardcoded values yay
-const ID : number = 5;
-const DIVISION : number = 7;
-const INTERNAL : number = 9;
+// Hardcoded values
+const STATUS : number = 2;
+const ID : number = 4;
+const DIVISION : number = 6;
+const INTERNAL : number = 8;
 
 function removeHeaders(){
 	let headerRow : HTMLTableRowElement = document.querySelector("#postingsTable > thead > tr");
+	headerRow.querySelector(`th:nth-child(${STATUS})`).remove()
 	headerRow.querySelector(`th:nth-child(${ID})`).remove()
 	headerRow.querySelector(`th:nth-child(${DIVISION})`).remove()
 	headerRow.querySelector(`th:nth-child(${INTERNAL})`).remove()
@@ -12,17 +14,23 @@ function removeHeaders(){
 
 function modifyRows(){
 	let rows = document.querySelectorAll("#postingsTable > tbody > tr"), i: number;
-	for (i = 0; i < rows.length; i++) {
-		rows[i].querySelector(`td:nth-child(${ID})`).remove();
-		combineDivision(rows[i]);
-		rows[i].querySelector(`td:nth-child(${INTERNAL})`).remove();
-	}
+	rows.forEach((row : Element) => {
+		let button : HTMLElement = row.querySelector("td:nth-child(1) > a.btn.btn-primary");
+		if (button && button.innerHTML.replace(/\s+/g, '') === "Applied"){
+			button.classList.remove("btn-primary");
+			button.classList.add("btn-success");
+		}
+		row.querySelector(`td:nth-child(${STATUS})`).remove()
+		row.querySelector(`td:nth-child(${ID})`).remove();
+		combineDivision(row);
+		row.querySelector(`td:nth-child(${INTERNAL})`).remove();
+	})
 }
 
 function combineDivision(row : Element){
 	// eliminate division column
-	let division_str = row.querySelector(`td:nth-child(${DIVISION}) > span`).innerHTML;
-	let organization_str = row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML;
+	let division_str : String = row.querySelector(`td:nth-child(${DIVISION}) > span`).innerHTML;
+	let organization_str : String = row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML;
 	if (!((organization_str.toLowerCase().replace(/\s+/g, '')).includes(division_str.toLowerCase().replace(/\s+/g, '')))){
 		row.querySelector(`td:nth-child(${DIVISION - 1}) > span`).innerHTML = organization_str + " - " + division_str;
 	}
