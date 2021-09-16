@@ -38,6 +38,8 @@ function combineDivision(row : Element){
 }
 
 function main(){
+	chrome.runtime.sendMessage({type: "showPageAction"});
+
 	// Check if on postings page
 	if (document.querySelector("#postingsTablePlaceholder") == null){
 		return

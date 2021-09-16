@@ -20,6 +20,7 @@
   "homepage": "https://github.com/zhaobenny/betterExperience#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/chrome": "0.0.157",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^8.1.1",
     "html-webpack-plugin": "^5.3.2",
