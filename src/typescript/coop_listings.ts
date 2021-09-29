@@ -38,33 +38,37 @@ function combineDivision(row : Element){
 }
 
 function main(){
+	chrome.runtime.sendMessage({type: "showPageAction"});
+
 	// Check if on postings page
 	if (document.querySelector("#postingsTablePlaceholder") == null){
 		return
 	}
 
-	removeHeaders();
-	modifyRows();
+	chrome.storage.local.get(['enabledState'], function(result) {
+		if (result['enabledState'] || (result['enabledState'] === undefined)){
+			removeHeaders();
+			modifyRows();
+			// Make sure the right (useless) element is being removed
+			var check = document.querySelector("body > main > div.row-fluid > div > div > div > div > div >" +
+			"div > div.panel.panel-default > div > table > tbody > tr > td:nth-child(2)").innerHTML;
+			if (check && check === "Job no longer available"){
+					document.querySelector("body > main > div.row-fluid > div > div > div > div > div > div > div.panel.panel-default").remove();
+			}
 
-	// Make sure the right (useless) element is being removed
-	var check = document.querySelector("body > main > div.row-fluid > div > div > div > div > div >" +
-	"div > div.panel.panel-default > div > table > tbody > tr > td:nth-child(2)").innerHTML;
-	if (check && check === "Job no longer available"){
-			document.querySelector("body > main > div.row-fluid > div > div > div > div > div > div > div.panel.panel-default").remove();
-	}
+			// Update the list when new sorting order is used
+			const target : HTMLElement = document.querySelector("#postingsTablePlaceholder");
+			const config = { childList: true, subtree: true};
 
-	// Update the list when new sorting order is used
-	const target : HTMLElement = document.querySelector("#postingsTablePlaceholder");
-	const config = { childList: true, subtree: true};
-
-	var observer = new MutationObserver(function() {
-		observer.disconnect();
-		removeHeaders();
-		modifyRows();
-		observer.observe(target, config);
+			var observer = new MutationObserver(function() {
+				observer.disconnect();
+				removeHeaders();
+				modifyRows();
+				observer.observe(target, config);
+			});
+			observer.observe(target, config);
+		}
 	});
-
-	observer.observe(target, config);
 }
 
 main();

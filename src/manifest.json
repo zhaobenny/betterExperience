@@ -1,13 +1,21 @@
 {
   "name": "betterExperience",
-  "version": "0.13",
+  "version": "0.13.1",
   "manifest_version": 2,
   "description": "Improving myExperience",
   "icons": {
     "128": "icon128.png"
   },
   "permissions": [
+    "storage"
   ],
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
   "content_scripts": [
     {
       "run_at": "document_end",
