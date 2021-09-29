@@ -50,7 +50,7 @@ function main(){
 			removeHeaders();
 			modifyRows();
 			// Make sure the right (useless) element is being removed
-			var check = document.querySelector("body > main > div.row-fluid > div > div > div > div > div >" +
+			var check : String = document.querySelector("body > main > div.row-fluid > div > div > div > div > div >" +
 			"div > div.panel.panel-default > div > table > tbody > tr > td:nth-child(2)").innerHTML;
 			if (check && check === "Job no longer available"){
 					document.querySelector("body > main > div.row-fluid > div > div > div > div > div > div > div.panel.panel-default").remove();
@@ -60,7 +60,7 @@ function main(){
 			const target : HTMLElement = document.querySelector("#postingsTablePlaceholder");
 			const config = { childList: true, subtree: true};
 
-			var observer = new MutationObserver(function() {
+			var observer : MutationObserver = new MutationObserver(function() {
 				observer.disconnect();
 				removeHeaders();
 				modifyRows();
