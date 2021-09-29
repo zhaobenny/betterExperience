@@ -4,9 +4,10 @@ document.getElementById("toggle").addEventListener("click", function(){
         console.debug('EnabledState is set to ' + result['enabledState']);
         if (result['enabledState'] === undefined){
             enabledState = true;
+        } else {
+            enabledState = result['enabledState'];
         }
-        chrome.storage.local.set({enabledState: !enabledState}, function() {
-            console.log('EnabledState is now set to ' + !enabledState);
-        });
+        chrome.storage.local.set({enabledState: (!enabledState)});
+        chrome.tabs.reload()
     });
 });
