@@ -37,7 +37,7 @@ function combineDivision(row : Element){
 	row.querySelector(`td:nth-child(${DIVISION})`).remove();
 }
 
-function main(){
+function coop_listings(){
 	chrome.runtime.sendMessage({type: "showPageAction"});
 
 	// Check if on postings page
@@ -47,6 +47,11 @@ function main(){
 
 	chrome.storage.local.get(['enabledState'], function(result) {
 		if (result['enabledState'] || (result['enabledState'] === undefined)){
+			var link : HTMLLinkElement = document.createElement("link");
+			link.href = chrome.extension.getURL("table.css");
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			document.getElementsByTagName("head")[0].appendChild(link);
 			removeHeaders();
 			modifyRows();
 			// Make sure the right (useless) element is being removed
@@ -71,4 +76,4 @@ function main(){
 	});
 }
 
-main();
+coop_listings();

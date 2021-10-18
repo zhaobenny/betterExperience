@@ -4,9 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-  coop_listings: './src/typescript/coop_listings.ts',
-  background: './src/typescript/background.ts',
-  popup: './src/typescript/popup.ts',
+    coop_listings: './src/typescript/coop_listings.ts',
+    background: './src/typescript/background.ts',
+    popup: './src/typescript/popup.ts',
+    main: './src/typescript/main.ts',
   },
   module: {
     rules: [{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ }],

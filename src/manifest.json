@@ -16,6 +16,9 @@
     "scripts": ["background.js"],
     "persistent": true
   },
+  "web_accessible_resources": [
+    "table.css"
+  ],
   "content_scripts": [
     {
       "run_at": "document_end",
@@ -28,6 +31,13 @@
       "css" : [
         "table.css"
       ]
+    },
+    {
+      "matches": ["https://myexperience.sfu.ca/*"],
+      "js": [
+        "main.js"
+      ],
+      "css": ["main.css"]
     }
   ]
 }
