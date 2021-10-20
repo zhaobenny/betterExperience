@@ -1,14 +1,13 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const glob = require("glob");
 
 module.exports = {
-  entry: {
-    coop_listings: './src/typescript/coop_listings.ts',
-    background: './src/typescript/background.ts',
-    popup: './src/typescript/popup.ts',
-    main: './src/typescript/main.ts',
-  },
+  entry: glob.sync('./src/typescript/**/*.ts').reduce(function(obj, el){
+    obj[path.parse(el).name] = el;
+    return obj
+ },{}),
   module: {
     rules: [{ test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ }],
   },

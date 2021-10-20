@@ -1,4 +1,4 @@
-function main_elements(){
+function main(){
 	chrome.runtime.sendMessage({type: "showPageAction"});
 	chrome.storage.local.get(['enabledState'], function(result) {
 		if (result['enabledState'] || (result['enabledState'] === undefined)){
@@ -10,4 +10,4 @@ function main_elements(){
     })
 }
 
-main_elements();
+main();

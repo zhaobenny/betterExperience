@@ -27,17 +27,13 @@
       ],
       "js": [
         "coop_listings.js"
-      ],
-      "css" : [
-        "table.css"
       ]
     },
     {
       "matches": ["https://myexperience.sfu.ca/*"],
       "js": [
-        "main.js"
-      ],
-      "css": ["main.css"]
+        "home.js"
+      ]
     }
   ]
 }
