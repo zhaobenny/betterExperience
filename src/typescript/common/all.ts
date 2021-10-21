@@ -15,7 +15,8 @@ async function main() {
 		// remove ugly white bar
 		document.querySelector("body > div.is--spiral--robot.eat--bootstrap > header > div.header--branding.display--flex.dist--between").remove();
 
-		stopLoggingMeOut();
+		// TODO: does not work - need to halt the script before normal js injection
+		// stopLoggingMeOut();
 
 		// branding yo
 		let extensionTitleDiv: HTMLParagraphElement = document.createElement("div");
