@@ -1,6 +1,6 @@
 {
   "name": "betterExperience",
-  "version": "0.13.1",
+  "version": "0.13.5",
   "manifest_version": 2,
   "description": "Improving myExperience",
   "icons": {
@@ -17,7 +17,8 @@
     "persistent": true
   },
   "web_accessible_resources": [
-    "table.css"
+    "table.css",
+    "all.css"
   ],
   "content_scripts": [
     {
@@ -30,9 +31,9 @@
       ]
     },
     {
-      "matches": ["https://myexperience.sfu.ca/*"],
+      "matches": ["https://myexperience.sfu.ca/myAccount/*"],
       "js": [
-        "home.js"
+        "all.js"
       ]
     }
   ]

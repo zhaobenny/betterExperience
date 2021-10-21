@@ -1,0 +1,59 @@
+body {
+    padding: 0%;
+}
+
+/* less margin more speed*/
+body > main--alt {
+    -webkit-text-size-adjust: 100%;
+    color: #505050;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    box-sizing: inherit;
+    padding: 0 16px;
+    min-height: 100%;
+    transition: all 10ms ease;
+    margin: 120px 0px 0px 320px;
+}
+
+
+/* move everything up to take up room left by removing the SFU logo */
+body > div.is--spiral--robot.eat--bootstrap > header > div:nth-child(1) {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+body > div.is--spiral--robot.eat--bootstrap > header > div.settings-menu > div > div > button {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+body > div.is--spiral--robot.eat--bootstrap > header > div.settings-menu > div {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+body > div.is--spiral--robot.eat--bootstrap > header > div.settings-menu {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+body > div.is--spiral--robot.eat--bootstrap > header > div.navigation--mobile.is--visible.ps {
+    position: fixed;
+    top: 50px;
+    z-index: 1;
+    transition: all 10ms ease !important;
+}
+
+body > main > div.orbisModuleHeader{
+    position: absolute;
+    top: 60px;
+    width: 80%; /* ignores sidebar  :( */
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
