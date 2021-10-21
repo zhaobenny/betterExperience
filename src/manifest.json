@@ -1,6 +1,6 @@
 {
   "name": "betterExperience",
-  "version": "0.13.1",
+  "version": "0.13.5",
   "manifest_version": 2,
   "description": "Improving myExperience",
   "icons": {
@@ -16,6 +16,10 @@
     "scripts": ["background.js"],
     "persistent": true
   },
+  "web_accessible_resources": [
+    "table.css",
+    "all.css"
+  ],
   "content_scripts": [
     {
       "run_at": "document_end",
@@ -24,9 +28,12 @@
       ],
       "js": [
         "coop_listings.js"
-      ],
-      "css" : [
-        "table.css"
+      ]
+    },
+    {
+      "matches": ["https://myexperience.sfu.ca/myAccount/*"],
+      "js": [
+        "all.js"
       ]
     }
   ]
