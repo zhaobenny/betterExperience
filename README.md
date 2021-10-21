@@ -1,5 +1,5 @@
 # ✔️ betterExperience
-[![GitHub Super-Linter](https://github.com/zhaobenny/betterExperience/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![CodeQL](https://github.com/zhaobenny/betterExperience/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zhaobenny/betterExperience/actions/workflows/codeql-analysis.yml)
 
 Users of Simon Fraser University's co-op job board will know the complete pain and suffering that myExperience causes. This Chrome extension will aim to alleviate some of the solvable problems associated with SFU's myExperience. Oh, it's also written in Typescript and packed by Webpack.
 

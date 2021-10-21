@@ -1,45 +1,44 @@
 /* two big buttons */
-td:nth-child(1){
+td:nth-child(1) {
     width: 195px !important;
 }
 
 /* tags */
-td:nth-child(2){
+td:nth-child(2) {
     max-width: 120px !important;
 }
 
 /* job title */
-td:nth-child(4){
+td:nth-child(4) {
     max-width: 300px;
     white-space: normal !important;
 }
 
 /* orginization */
-td:nth-child(5){
+td:nth-child(5) {
     max-width: 200px !important;
     white-space: normal !important;
 }
 
 /* position type */
-#postingsTable > thead > tr > th:nth-child(5){
+#postingsTable > thead > tr > th:nth-child(5) {
     white-space: normal !important;
     max-width: 50px !important;
     padding-right: 1px !important;
 }
 
 /* openings */
-#postingsTable > thead > tr > th:nth-child(6){
+#postingsTable > thead > tr > th:nth-child(6) {
     padding-right: 1px !important;
 }
 
 /* locationheader */
-#postingsTable > thead > tr > th:nth-child(7){
+#postingsTable > thead > tr > th:nth-child(7) {
     padding-right: 2px !important;
 }
 
-
 /* location */
-td:nth-child(8){
+td:nth-child(8) {
     max-width: 100px !important;
     /* max-height: 70px !important; doesnt work?? */
     white-space: normal !important;
@@ -48,14 +47,14 @@ td:nth-child(8){
 }
 
 /* time */
-td:nth-child(9){
+td:nth-child(9) {
     max-width: 75px !important;
     white-space: normal !important;
 }
 
 /* applied */
-td:nth-child(1) > a.btn-success{
-    background-color: #006400!important;
+td:nth-child(1) > a.btn-success {
+    background-color: #006400 !important;
 }
 
 .orbis-posting-actions {
