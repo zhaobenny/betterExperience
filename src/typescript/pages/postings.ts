@@ -1,4 +1,4 @@
-import injectCSS from '../lib/injectCSS'
+import injectCSS, { checkEnabled } from '../lib/injectCSS'
 
 // Hardcoded values
 const STATUS: number = 2
@@ -41,7 +41,11 @@ function combineDivision (row: Element): void {
 
 async function main (): Promise<void> {
   // Awful check to see if on postings page
-  if (document.querySelector('#postingsTablePlaceholder') == null) {
+  const table = document.querySelector('#postingsTable');
+  if (table === null) {
+    if (checkEnabled()){
+      document.querySelector("body > main > div.orbisModuleHeader").remove(); // remove orbis header that moved up randomly in a posting page???
+    }
     return
   }
 
@@ -61,6 +65,9 @@ async function main (): Promise<void> {
 
     let observer: MutationObserver = new MutationObserver(function () {
       observer.disconnect()
+      if (table === null) {
+        return
+      }
       removeHeaders()
       modifyRows()
       observer.observe(target, config)

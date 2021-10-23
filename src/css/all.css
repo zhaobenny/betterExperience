@@ -13,8 +13,8 @@ body > main--alt {
     box-sizing: inherit;
     padding: 0 16px;
     min-height: 100%;
-    transition: all 10ms ease;
-    margin: 120px 0px 0px 320px;
+    transition: all 10ms ease !important;
+    margin: 120px 0px 0px 320px !important;
 }
 
 /* move everything up to take up room left by removing the SFU logo */
