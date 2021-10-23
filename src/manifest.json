@@ -18,7 +18,8 @@
   },
   "web_accessible_resources": [
     "table.css",
-    "all.css"
+    "all.css",
+    "apps.css"
   ],
   "content_scripts": [
     {
@@ -27,7 +28,15 @@
         "https://myexperience.sfu.ca/myAccount/co-op/postings.htm"
       ],
       "js": [
-        "coop_listings.js"
+        "postings.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://myexperience.sfu.ca/myAccount/co-op/applications.htm"
+      ],
+      "js": [
+        "apps.js"
       ]
     },
     {

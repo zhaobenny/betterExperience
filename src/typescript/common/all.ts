@@ -12,7 +12,10 @@ function stopLoggingMeOut (): void {
 async function main (): Promise<void> {
   if (await injectCSS(document, 'all.css')) {
     // remove ugly white bar
-    document.querySelector('body > div.is--spiral--robot.eat--bootstrap > header > div.header--branding.display--flex.dist--between').remove()
+    const whiteBar : HTMLElement = document.querySelector('body > div.is--spiral--robot.eat--bootstrap > header > div.header--branding.display--flex.dist--between')
+    if (whiteBar) {
+      whiteBar.remove()
+    }
 
     // TODO: does not work - need to halt the script before normal js injection
     // stopLoggingMeOut();
