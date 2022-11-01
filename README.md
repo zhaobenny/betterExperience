@@ -1,7 +1,9 @@
 # ✔️ betterExperience
 [![CodeQL](https://github.com/zhaobenny/betterExperience/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zhaobenny/betterExperience/actions/workflows/codeql-analysis.yml)
 
-Users of Simon Fraser University's co-op job board will know the complete pain and suffering that myExperience causes. This Chrome extension will aim to alleviate some of the solvable problems associated with SFU's myExperience. Oh, it's also written in Typescript and packed by Webpack.
+Not maintained anymore.
+
+This Chrome extension improves some usability of SFU's myExperience job board. It's written in Typescript and packed by Webpack.
 
 ## 🛠️ Installation
 Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/betterexperience/fnlbojiblimmclkfmhpfelpnmgoidnma), or alternatively do the steps below.
@@ -12,13 +14,6 @@ First fork the repo, have npm installed, then run:
 * npm install -dev
 * npm run start
 * Load /dist as a [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/#manifest) in Chrome
-
-## 🤝 Contributing
-Help is always wanted in untangling myExperience's wonderful code and making getting ghosted in numerous job applications easier!
-
-## 🌟 Contributors
-
-[@zhaobenny](https://github.com/zhaobenny) - I made this 🙂
 
 ## License
 
